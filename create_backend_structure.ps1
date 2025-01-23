@@ -1,0 +1,5 @@
+New-Item -ItemType Directory -Path "backend"
+New-Item -ItemType Directory -Path "backend\src"
+New-Item -ItemType Directory -Path "backend\src\models"
+New-Item -ItemType Directory -Path "backend\src\controllers"
+New-Item -ItemType Directory -Path "backend\src\routes"
