@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { Header } from '@/components/Header';
+import { config } from '../config';
 
 interface Hotel {
   hotel: {
@@ -46,7 +47,7 @@ export const HotelsPage = () => {
     setError(null);
 
     try {
-      const response = await axios.get(`http://localhost:5001/api/hotels/random`);
+      const response = await axios.get(`${config.apiUrl}/api/hotels/random`);
       
       if (response.data.success) {
         setHotels(response.data.data);
@@ -71,7 +72,7 @@ export const HotelsPage = () => {
     setError(null);
 
     try {
-      const response = await axios.get(`http://localhost:5001/api/hotels/search?cityName=${encodeURIComponent(cityName)}`);
+      const response = await axios.get(`${config.apiUrl}/api/hotels/search?cityName=${encodeURIComponent(cityName)}`);
       
       if (response.data.success) {
         setHotels(response.data.data);

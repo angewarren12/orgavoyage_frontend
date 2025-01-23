@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { FlightSearchForm } from './FlightSearchForm';
 import { FlightSearchForm as FlightSearchFormType } from '../types/search';
 import axios from 'axios';
+import { config } from '../config';
 import { searchHistoryService } from '@/services/searchHistoryService';
 
 interface FlightSearchResponse {
@@ -31,7 +32,7 @@ export const FlightSearch: React.FC = () => {
 
         try {
             console.log('Sending search request...');
-            const response = await axios.post('http://localhost:5001/api/flights/search', {
+            const response = await axios.post(`${config.apiUrl}/api/flights/search`, {
                 departureAirport: searchData.departureAirport,
                 arrivalAirport: searchData.arrivalAirport,
                 departureDate: searchData.departureDate,

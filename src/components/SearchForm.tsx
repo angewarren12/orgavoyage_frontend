@@ -6,6 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Select } from '@/components/ui/select';
 import { PassengerSelector } from '@/components/PassengerSelector';
 import axios from 'axios';
+import { config } from '../config';
 
 export const SearchForm = () => {
   const navigate = useNavigate();
@@ -60,7 +61,7 @@ export const SearchForm = () => {
         cabinClass: formData.cabinClass
       };
       console.log('Search data:', searchData);
-      const response = await axios.post('http://localhost:5001/api/flights/search', searchData);
+      const response = await axios.post(`${config.apiUrl}/api/flights/search`, searchData);
 
       console.log('Search response:', response.data);
       
