@@ -1,6 +1,7 @@
 import { FlightSearchForm } from '../types/search';
+import { config } from '../config';
 
-const API_BASE_URL = 'http://localhost:5001/api';
+const API_BASE_URL = `${config.apiUrl}/api`;
 
 export interface FlightOffer {
     id: string;

@@ -1,6 +1,7 @@
 import { Airport, Airline } from '../types/travel';
+import { config } from '../config';
 
-const API_BASE_URL = 'http://localhost:5001/api/autocomplete';
+const API_BASE_URL = `${config.apiUrl}/api/autocomplete`;
 
 export const searchAirports = async (keyword: string): Promise<Airport[]> => {
     try {
